@@ -1,16 +1,17 @@
-// Константи для варіанту 2
-const date = "202408";         // Серпень 2024 у форматі YYYYMM
-const time_period = "m";       // Період: m (місяць)
 
-// Створюємо об'єкт URL
+const date = "20160101";       
+const time_period = "m";       
+
+
 const baseUrl = "https://bank.gov.ua/";
-const apiPath = "/api/fininc_exp";
+const apiPath = "/NBUStatService/v1/statdirectory/banksincexp";
 
 const url = new URL(apiPath, baseUrl);
 
-// Додаємо параметри до URL
+
 url.searchParams.append('date', date);
 url.searchParams.append('period', time_period);
+url.searchParams.append('json', '');  
 
-// Виводимо URL у консоль
+
 console.log(url.toString());
